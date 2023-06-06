@@ -21,7 +21,6 @@ foods.unshift('pizza', 'cheeseburger');
 
 console.log('Exercise 2 Result:\n', foods);
 
-
 /*
 Exercise 3:
   - Add the string 'taco' to the foods array so that 'taco' is the first food in the array.
@@ -44,7 +43,6 @@ let favFood = foods[0];
 
 console.log('Exercise 4 Result:\n', favFood);
 
-
 /*
 Exercise 5:
   - Insert the string 'tofu' in the foods array between 'pizza' & 'cheeseburger'
@@ -52,7 +50,7 @@ Exercise 5:
 
 // Complete Exercise 5 below...
 
-
+foods.splice(2, 0, 'tofu');
 
 console.log('Exercise 5 Result:\n', foods);
 
@@ -63,7 +61,7 @@ Exercise 6:
 
 // Complete Exercise 6 below...
 
-
+foods.splice(1, 1, 'sushi', 'cupcake');
 
 console.log('Exercise 6 Result:\n', foods);
 
@@ -75,7 +73,7 @@ Exercise 7:
 
 // Complete Exercise 7 below...
 
-
+let yummy = foods.slice(1, 3);
 
 console.log('Exercise 7 Result:\n', yummy);
 
@@ -86,7 +84,7 @@ Exercise 8:
 
 // Complete Exercise 8 below...
 
-
+let soyIdx = foods.indexOf("tofu");
 
 console.log('Exercise 8 Result:\n', soyIdx);
 
@@ -98,7 +96,7 @@ Exercise 9:
 
 // Complete Exercise 9 below...
 
-
+let allFoods = foods.join();
 
 console.log('Exercise 9 Result:\n', allFoods);
 
@@ -109,7 +107,7 @@ Exercise 10:
 
 // Complete Exercise 10 below...
 
-
+let hasSoup = foods.indexOf("soup") >= 0;
 
 console.log('Exercise 10 Result:\n', hasSoup);
 
@@ -123,21 +121,42 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 // Complete Exercise 11 below...
 
+let odds = [];
 
+nums.forEach(function(num) {
+  if (num % 2 === 1) {
+    odds.push(num);
+  }
+  return odds;
+})
 
 console.log('Exercise 11 Result:\n', odds);
 
 /*
 Exercise 12:
   - Use the forEach method to iterate through the same nums array and add the number to **one** of the following arrays: fizz, buzz or fizzbuzz - based upon the following:
-  	- Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
-  	- Add to the fizz array if the number is evenly divisible by 3.
-  	- Add to the buzz array if the number is evenly divisible by 5.
+    - Add to the fizzbuzz array if the number is evenly divisible by 3 & 5.
+    - Add to the fizz array if the number is evenly divisible by 3.
+    - Add to the buzz array if the number is evenly divisible by 5.
 */
 
 // Complete Exercise 12 below...
 
+let fizzbuzz = [];
+let fizz = [];
+let buzz = [];
 
+nums.forEach(function(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    fizzbuzz.push(num);
+  }
+  else if (num % 3 === 0) {
+    fizz.push(num);
+  }
+  else if (num % 5 === 0) {
+    buzz.push(num);
+  }
+})
 
 console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
@@ -151,15 +170,17 @@ Exercise 13:
 */
 
 const numArrays = [
-	[100, 5, 23],
-	[15, 21, 72, 9],
-	[45, 66],
-	[7, 81, 90]
+  [100, 5, 23],
+  [15, 21, 72, 9],
+  [45, 66],
+  [7, 81, 90]
 ];
 
 // Complete Exercise 13 below...
 
 
+let numArraysCopy = [...numArrays]; //making copy of numArrays
+let numList = numArraysCopy.pop();
 
 console.log('Exercise 13 Result:\n', numList);
 
@@ -170,7 +191,7 @@ Exercise 14:
 
 // Complete Exercise 14 below...
 
-
+let num = numArrays[2][1];
 
 console.log('Exercise 14 Result:\n', num);
 
@@ -182,6 +203,12 @@ Exercise 15:
 
 // Complete Exercise 15 below...
 
+let total = 0;
 
+numArrays.forEach(function(numArray) {
+  numArray.forEach(function(num) {
+    total += num;
+  })
+})
 
 console.log('Exercise 15 Result:\n', total);
