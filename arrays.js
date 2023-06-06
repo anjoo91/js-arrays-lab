@@ -14,11 +14,13 @@ Exercise 2:
   - Add the strings 'pizza' & 'cheeseburger' to the foods array such that 'pizza' comes before 'cheeseburger'.
 */
 
+
 // Complete Exercise 2 below...
 
+foods.unshift('pizza', 'cheeseburger');
 
+console.log('Exercise 2 Result:\n', foods);
 
-console.log('Exercise 2 Result:\n',  foods);
 
 /*
 Exercise 3:
