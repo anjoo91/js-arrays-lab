@@ -29,7 +29,7 @@ Exercise 3:
 
 // Complete Exercise 3 below...
 
-
+foods.unshift('taco');
 
 console.log('Exercise 3 Result:\n', foods);
 
